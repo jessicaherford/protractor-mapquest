@@ -11,11 +11,12 @@ browser.driver.controlFlow().execute = function() {
   return origFn.apply(browser.driver.controlFlow(), args);
 };
 
+
 describe('mapquest usertest', function(){
 
-  it('should do something', funciton(){
+  it('should do something', function(){
     browser.get('https://www.mapquest.com/');
-    
+
   })
 
 })
