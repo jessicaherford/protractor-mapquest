@@ -14,8 +14,15 @@ browser.driver.controlFlow().execute = function() {
 
 describe('mapquest usertest', function(){
 
-  it('should do something', function(){
+  it('should do click on findplaces button', function(){
     browser.get('https://www.mapquest.com/');
+
+    element(by.css('.icon-find-places.find')).click();
+
+    var findPlaces = element(by.css())
+
+    expect()
+
 
   })
 
