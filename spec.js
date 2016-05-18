@@ -17,15 +17,34 @@ describe('mapquest usertest', function(){
   it('should do click on findplaces button', function(){
     browser.get('https://www.mapquest.com/');
 
-    element(by.css('.icon-find-places.find')).click();
-    element(by.css('icon-directions.directions')).click();
+    element(by.css('.icon-find-places.find')).click().then(function(){
 
+      element(by.model('location.name')).sendKeys('Denver');
 
-    var findPlaces = element(by.css())
+      var locationDenver = element(by.model('location.name'));
 
-    expect()
+      expect(locationDenver.getAttribute('value').then(function(value){
+        console.log(value);
+      })
 
+    );
+    // element(by.css('icon-directions.directions')).click();
 
+    //Need to add expect to equal hide = false
+  });
+
+  // it('should enter Denver as a location', function(){
+  //   browser.get('https://www.mapquest.com/');
+  //
+  //   element(by.model('location.name')).sendKeys('Denver');
+  //
+  //   var locationDenver = element(by.model('location.name'));
+  //
+  //   expect(locationDenver.getAttribute('value').then(function(value){
+  //     console.log(value));
+  //   })
+  //   // expect(enteredName.getAttribute('value').toEqual('Darth Vader'));
+  //
   })
 
 })
