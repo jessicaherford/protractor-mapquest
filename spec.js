@@ -18,6 +18,8 @@ describe('mapquest usertest', function(){
     browser.get('https://www.mapquest.com/');
 
     element(by.css('.icon-find-places.find')).click();
+    element(by.css('icon-directions.directions')).click();
+
 
     var findPlaces = element(by.css())
 
