@@ -14,8 +14,12 @@ browser.driver.controlFlow().execute = function() {
 
 describe('mapquest usertest', function(){
 
-  it('should do click on findplaces button and fill out location value', function(){
+  beforeEach(function() {
     browser.get('https://www.mapquest.com/');
+  });
+
+  it('should do click on findplaces button and fill out location value', function(){
+    // browser.get('https://www.mapquest.com/');
 
     element(by.css('.icon-find-places.find')).click().then(function(){
 
@@ -33,6 +37,28 @@ describe('mapquest usertest', function(){
   });
 
 
+  })
+
+  it('should click on get directions button and fill out two addresses for directions', function(){
+    // browser.get('https://www.mapquest.com/');
+
+    element(by.css('.icon-directions.directions')).click().then(function(){
+
+    var location1 = element(by.css('#input-directions-0')).sendKeys('Boulder, CO');
+    var location2 = element(by.css('#input-directions-1')).sendKeys('Denver, CO');
+
+    expect(location1.getAttribute('value').then(function(value){
+      console.log(value);
+    })
+  );
+
+  expect(location2.getAttribute('value').then(function(value){
+    console.log(value);
+  })
+);
+
+
+    })
   })
 
 })
