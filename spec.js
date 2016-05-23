@@ -50,15 +50,21 @@ describe('mapquest usertest', function(){
     expect(location1.getAttribute('value').then(function(value){
       console.log(value);
     })
-  );
+    );
 
-  expect(location2.getAttribute('value').then(function(value){
+    expect(location2.getAttribute('value').then(function(value){
     console.log(value);
-  })
-);
-
-
     })
-  })
+    );
+
+    element(by.css(".get-directions.btn-block.btn-lg.text-center.directions-focus-cycle-2.highlight")).click()
+    })
+    })
 
 })
+
+
+// browser.takeScreenshot().then(function(png) {
+// var stream = fs.createWriteStream("/tmp/screenshot.png");
+// stream.write(new Buffer(png, 'base64'));
+// stream.end();
